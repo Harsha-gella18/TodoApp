@@ -1,0 +1,29 @@
+<%- include("partials/header") %>
+<div class="table-container">
+    <h2 class="todo-title">TODO LIST</h2>
+    <div>
+        <a class="btn" href="/add-todo">Add todo</a>
+    </div>
+    <br/>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created on</th>
+            <th>Updated at</th>
+            <th>Action</th>
+        </tr>
+        <% for(let i=0; i<todos.length; i++) { %>
+            <tr> <!-- Move the <tr> tag inside the loop to iterate properly -->
+                <td><%= todos[i].title %></td> <!-- Remove extra '>' after <%= %>-->
+                <td><%= todos[i].description %></td> <!-- Remove extra '>' after <%= %>-->
+                <td><%= todos[i].createdAt %></td> <!-- Remove extra '>' after <%= %>-->
+                <td><%= todos[i].updatedAt %></td> <!-- Remove extra '>' after <%= %>-->
+                <td>
+                    <a class="btn" href="/update-todo">Edit</a>
+                    <a class="btn" href="/delete-todo">Delete</a>
+                </td>
+            </tr>
+        <% } %> <!-- Close the loop properly -->
+    </table>
+</div>
