@@ -13,17 +13,19 @@
             <th>Updated at</th>
             <th>Action</th>
         </tr>
-        <% for(let i=0; i<todos.length; i++) { %>
-            <tr> <!-- Move the <tr> tag inside the loop to iterate properly -->
-                <td><%= todos[i].title %></td> <!-- Remove extra '>' after <%= %>-->
-                <td><%= todos[i].description %></td> <!-- Remove extra '>' after <%= %>-->
-                <td><%= todos[i].createdAt %></td> <!-- Remove extra '>' after <%= %>-->
-                <td><%= todos[i].updatedAt %></td> <!-- Remove extra '>' after <%= %>-->
-                <td>
-                    <a class="btn" href="/update-todo">Edit</a>
-                    <a class="btn" href="/delete-todo">Delete</a>
-                </td>
-            </tr>
-        <% } %> <!-- Close the loop properly -->
+        <% todos.forEach(todo => { %>
+        <tr>
+            <td><%= todo.title %></td>
+            <td><%= todo.description %></td>
+            <td><%= todo.createdAt.toDateString() %></td>
+            <td><%= todo.updatedAt.toDateString() %></td>
+            <td>
+                <a class="btn" href="/update-todo">Edit</a>
+                <a class="btn" href="/delete-todo">Delete</a>
+            </td>
+        </tr>
+        <% }) %>
     </table>
 </div>
+</body>
+</html>
