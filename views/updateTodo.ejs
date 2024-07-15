@@ -3,15 +3,19 @@
         <h2 class="todo-title">Update Todo</h2>
         <div>
             <a class="btn" href="/">Back</a>
-            <form action="" method="">
+            <form action="/upds-todo/?id=<%= todo._id %>" method="POST">
                 <div class="update-todo">
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" value="" placeholder="Type todo here"/>
+                        <input type="text" 
+                            name="title"
+                            value="<%= todo.title %>"
+                            placeholder="Type todo here"
+                        />
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" name="description" value="" placeholder="Type description here"/>
+                        <input type="text" name="description" value="<%= todo.description %>" placeholder="Type description here"/>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="button">Save</button>

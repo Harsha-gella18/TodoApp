@@ -14,17 +14,18 @@
             <th>Action</th>
         </tr>
         <% todos.forEach(todo => { %>
-        <tr>
-            <td><%= todo.title %></td>
-            <td><%= todo.description %></td>
-            <td><%= todo.createdAt.toDateString() %></td>
-            <td><%= todo.updatedAt.toDateString() %></td>
-            <td>
-                <a class="btn" href="/update-todo">Edit</a>
-                <a class="btn" href="/delete-todo">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td><%= todo.title %></td>
+                <td><%= todo.description %></td>
+                <td><%= todo.createdAt.toDateString() %></td>
+                <td><%= todo.updatedAt.toDateString() %></td>
+                <td>
+                    <a class="btn" href="/update-todo?id=<%= todo._id %>">Edit</a>
+                    <a class="btn" href="/delete-todo?id=<%= todo._id %>">Delete</a>
+                </td>
+            </tr>
         <% }) %>
+        
     </table>
 </div>
 </body>
